@@ -1,0 +1,13 @@
+name: 'some action'
+description: 'Greet someone'
+runs:
+  using: "composite"
+  steps:
+    - name: Set Greeting
+      run: echo "Hello world"
+      shell: bash
+
+    - name: Random Number Generator
+      id: random-number-generator
+      run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
+      shell: bash
